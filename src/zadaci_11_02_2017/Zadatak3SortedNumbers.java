@@ -1,6 +1,7 @@
 package zadaci_11_02_2017;
 
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Zadatak3SortedNumbers {
@@ -9,10 +10,23 @@ public class Zadatak3SortedNumbers {
 		// create scanner
 		Scanner input = new Scanner (System.in);
 		// prompt the user for the three numbers
+		double num1 = 0;
+		double num2 = 0;
+		double num3 = 0;
+		boolean ex = true;
+		do {
+			try {
 		System.out.println("Enter three numbers for sorting: ");
-		double num1 = input.nextDouble();
-		double num2 = input.nextDouble();
-		double num3 = input.nextDouble();
+		num1 = input.nextDouble();
+		num2 = input.nextDouble();
+		num3 = input.nextDouble();
+		ex = false;
+			}
+			catch (InputMismatchException e) {
+				System.out.println("Invalid input, try again");
+				input.nextLine();
+			}
+		} while (ex);
 		
 		// display  sorted numbers using the method that uses sort method from Array class
 		displaySortedNumbers(num1, num2, num3);

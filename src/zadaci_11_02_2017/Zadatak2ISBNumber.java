@@ -16,6 +16,10 @@ public class Zadatak2ISBNumber {
 
 				System.out.println("Enter first 9 digits of ISBN-10 number: ");
 				isbn = input.next();
+				while(isbn.length()!=9){
+					System.out.println("Your input is longer or shorter, please enter only 9 digits of ISBN-10 number: ");
+					isbn = input.next();
+				}
 				int isbnInt = Integer.parseInt(isbn);
 				ex = false;
 			} catch (NumberFormatException e) {
