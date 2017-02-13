@@ -5,6 +5,7 @@ public class Zadatak1PrimeNumbers {
 	public static void main(String[] args) {
 		// invoking a method that print prime numbers in the range from parameter1 to parameter2
 		printPrimes(1, 10);
+		System.out.println();
 		// invoking an overloaded method that prints prime numbers with designated number per line  
 		printPrimes(1, 30, 5);
 	}
@@ -40,7 +41,7 @@ public class Zadatak1PrimeNumbers {
 			if (number % i == 0) {
 				return false;
 			}
-			break;
+			
 		}
 		return true;
 	}
