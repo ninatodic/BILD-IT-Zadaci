@@ -8,10 +8,12 @@ public class Aplikacija {
 
 	public static void main(String[] args) throws IOException {
 		Scanner input = new Scanner(System.in);
+		// Application runs forever
 		while (true) {
 			printMenu();
 			boolean ex = true;
 			int userInput = 0;
+			// Handeling user input mismatch
 			do {
 				try {
 					userInput = input.nextInt();
@@ -27,7 +29,7 @@ public class Aplikacija {
 				int month;
 				int year;
 
-				// prompt user for month and year
+				// prompt user for month and year and handles possible exception
 				ex = true;
 				do {
 
@@ -61,7 +63,7 @@ public class Aplikacija {
 				int month;
 				int date;
 				int year;
-
+				// prompt users for month, date and year in which they want to set reminder and handles possible exception
 				ex = true;
 				do {
 					try {
@@ -80,6 +82,7 @@ public class Aplikacija {
 						if (month < 1 || month > 12)
 							throw new Exception("Invalid index for month: " + month);
 
+						// adds the reminder
 						Reminder.addTheReminder(month, date, year, reminderText);
 						System.out.println("You have succesfully added a reminder ");
 						System.out.println();
@@ -89,7 +92,6 @@ public class Aplikacija {
 						System.out.println("Invalid input, try again");
 						input.nextLine();
 					} catch (Exception e) {
-						// handles any other Exception
 						System.out.println("Invalid entry, there is only 12 months, try again");
 					}
 				} while (ex);
@@ -97,6 +99,7 @@ public class Aplikacija {
 			}
 			case 3: {
 				int month;
+				// prompt users for month for which they want to print reminder and handles possible exception
 
 				ex = true;
 				do {
@@ -107,6 +110,7 @@ public class Aplikacija {
 						// check if it is a valid month
 						if (month < 1 || month > 12)
 							throw new Exception("Invalid index for month: " + month);
+						// prints all reminders for given month
 						Reminder.printReminderForDesignatedMonth(month);
 						System.out.println();
 						ex = false;
@@ -114,13 +118,13 @@ public class Aplikacija {
 						System.out.println("Invalid input, try again");
 						input.nextLine();
 					} catch (Exception e) {
-						// handles any other Exception
 						System.out.println("Invalid entry, there is only 12 months, try again");
 					}
 				} while (ex);
 				break;
 			}
 			case 4: {
+				// prints all reminders
 				Reminder.printAllReminders();
 				System.out.println();
 				break;
@@ -134,6 +138,7 @@ public class Aplikacija {
 		
 	}
 
+	// method that prints main menu
 	public static void printMenu() {
 		System.out.println(
 				"Enter nuber for option: \n1. Print calendar \n2. Add a reminder \n3. Print reminder for certain month \n4. Print all reminders");

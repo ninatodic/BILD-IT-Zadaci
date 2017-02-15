@@ -67,7 +67,6 @@ public class Calendar {
 			}
 		}
 
-		// print a final new-line.
 		System.out.println();
 	}
 }
