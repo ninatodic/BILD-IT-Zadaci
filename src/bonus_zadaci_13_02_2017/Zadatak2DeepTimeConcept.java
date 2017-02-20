@@ -30,7 +30,7 @@ public class Zadatak2DeepTimeConcept {
 		int remainingSeconds = (int) (seconds % 60);
 		long minutes = seconds / 60;
 		int remainingMinutes = (int) (minutes % 60);
-		long hours = minutes / 24;
+		long hours = minutes / 60;
 
 		System.out.println("To go back in time for " + years + " years, with super fast plane, it would take you "
 				+ hours + ":" + remainingMinutes + ":" + remainingSeconds);
