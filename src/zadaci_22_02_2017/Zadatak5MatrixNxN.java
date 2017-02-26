@@ -16,16 +16,17 @@ public class Zadatak5MatrixNxN {
 			try{
 				System.out.println("Enter dimension of matrix: ");
 				n = input.nextInt();
-				if(n<1){
+				if(n<1||n>50){
 					throw new Exception("Invalid input");
 				}
+				
 				ex = false;
 			}
 			catch(InputMismatchException e){
 				System.out.println("Invalid input, try again.");
 				input.next();
 			}catch(Exception e){
-				System.out.println("Size of matrix has to be positive");
+				System.out.println("Size of matrix has to be positive and smaller than 50");
 			}
 			
 		}while(ex);
