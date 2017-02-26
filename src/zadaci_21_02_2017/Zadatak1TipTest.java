@@ -21,10 +21,16 @@ public class Zadatak1TipTest {
 
 				System.out.println("Enter tip percentage: ");
 				tipPercentage = input.nextDouble();
+				if(billAmount<0 || tipPercentage<0){
+					throw new Exception("Invalid input");
+				}
 
 				ex = false;
 			} catch (InputMismatchException e) {
 				System.out.println("Invalid input, try again");
+				input.next();
+			} catch (Exception e){
+				System.out.println("Bill amount and tip percentage cannot be negative numbers");
 				input.next();
 			}
 
