@@ -6,11 +6,13 @@ import java.util.Scanner;
 public class Zadatak2StrictlyIdenticalArrays {
 
 	public static void main(String[] args) {
+		// create scanner and declare two matrices
 		Scanner input = new Scanner(System.in);
 
 		int[][] m1 = new int[3][3];
 		int[][] m2 = new int[3][3];
 
+		// prompt user to fill first matrix and handle possible exceptions
 		boolean ex = true;
 		do {
 			try {
@@ -29,6 +31,7 @@ public class Zadatak2StrictlyIdenticalArrays {
 		} while (ex);
 
 		ex = true;
+		// prompt user to fill second matrix and handle possible exceptions
 		do {
 			try {
 				System.out.println("Enter 9 integers for second 3x3 array: ");
@@ -45,6 +48,7 @@ public class Zadatak2StrictlyIdenticalArrays {
 
 		} while (ex);
 
+		// print weahter the matrices are strictly identical
 		if (equals(m1, m2)) {
 			System.out.println("Two arrays are strictly indetical");
 		} else {
@@ -55,6 +59,7 @@ public class Zadatak2StrictlyIdenticalArrays {
 
 	}
 
+	// method that returns true if matrices are strictly identical
 	public static boolean equals(int[][] m1, int[][] m2) {
 		for (int i = 0; i < m1.length; i++) {
 			for (int j = 0; j < m1[i].length; j++) {

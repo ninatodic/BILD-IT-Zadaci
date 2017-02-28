@@ -6,11 +6,13 @@ import java.util.Scanner;
 public class Zadatak5LocationTest {
 
 	public static void main(String[] args) {
+		// create scanner and initialize variables
 		Scanner input = new Scanner(System.in);
 
 		int a = 0;
 		int b = 0;
 		boolean ex = true;
+		// prompt the user for size of matrix handling possible exceptions, not allowing him to enter negative and too large value
 		do {
 			try {
 				System.out.println("Enter the number of rows and columns in the array: ");
@@ -29,9 +31,11 @@ public class Zadatak5LocationTest {
 			}
 		} while (ex);
 
+		// declare array
 		double[][] niz1 = new double[a][b];
 
 		ex = true;
+		// fill the array with user input handling possible exceptions
 		do {
 			try {
 				System.out.println("Enter the array:");
@@ -48,8 +52,10 @@ public class Zadatak5LocationTest {
 			}
 		} while (ex);
 
+		// create Location object from locateLargest method
 		Location location = locateLargest(niz1);
 
+		// print the result
 		System.out.println("The location of hte largest element is " + location.getMaxValue() + " at ("
 				+ location.getRow() + ", " + location.getColumn() + ")");
 		
@@ -57,6 +63,7 @@ public class Zadatak5LocationTest {
 
 	}
 
+	// method that returns object with setted max walue and its location
 	public static Location locateLargest(double[][] a) {
 
 		Location location1 = new Location();

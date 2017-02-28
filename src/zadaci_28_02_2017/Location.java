@@ -1,13 +1,16 @@
 package zadaci_28_02_2017;
 
 public class Location {
+	// data fields
 	public int row;
 	public int column;
 	public double maxValue;
 
+	// default constructor
 	public Location() {
 	}
 
+	// getter and setter methods
 	public int getRow() {
 		return row;
 	}

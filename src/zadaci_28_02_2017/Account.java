@@ -3,11 +3,13 @@ package zadaci_28_02_2017;
 import java.util.Date;
 
 public class Account {
+	// data fields
 	private int id = 0;
 	private double balance = 0;
 	static private double annualInterestRate = 0;
 	Date dateCreated = new Date();
 
+	// default constructor and constructor with parameters
 	public Account() {
 	}
 
@@ -16,6 +18,7 @@ public class Account {
 		this.balance = balance;
 	}
 
+	// getter and setter methods
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -44,18 +47,22 @@ public class Account {
 		return dateCreated.toString();
 	}
 
+	// method that returns monthly interest rate
 	public double getMonthlyInterestRate() {
 		return annualInterestRate / 1200;
 	}
 
+	// method that returns monthly interest
 	public double getMonthlyInterest() {
 		return balance * getMonthlyInterestRate();
 	}
 
+	// method that allows withdraw of funds
 	public void withdraw(double withdraw) {
 		balance -= withdraw;
 	}
 
+	// method that allows deposit of funds
 	public void deposit(double deposit) {
 		balance += deposit;
 	}
