@@ -4,26 +4,26 @@ public class Zadatak2RandomNumberChooser {
 
 	public static void main(String[] args) {
 
-		int[] list = new int [52]; // array that holds numbers from 1 to 54, excluding 1 and 54
 		
-		for (int i = 0; i < 52; i++) { // fill the array
-			list[i] = i+2;
-		}
 		
-		// print random list using getRandom method
-		System.out.println("Random number is " + getRandom(list));
+		// prints random number from 1 to 54, excluding those added as parameter in getRandom method
+		System.out.println("Random number is " + getRandom(5,6,8,9));
 	}
 	
-	// method that returns random number from array or 0 if array is empty
+	// method that returns random number from 1 to 54, excluding those added as parameter in getRandom method
 	public static int getRandom(int... numbers){
-		int randomNumber = 0;
-		if(numbers.length==0){
-			return 0;
+		int[] excludedNumbers = numbers;
+		int randomNumber = (int)(1+Math.random()*54);
+		boolean x = true;
+		while(x){
+			for (int i = 0; i < excludedNumbers.length; i++) {
+				if(randomNumber==excludedNumbers[i]){
+					randomNumber = (int)(Math.random()*52);
+				}
+			}
+			x = false;
 		}
-		else{
-			randomNumber = (int)(Math.random()*52);
-			return numbers[randomNumber];
-		}
+		return randomNumber;
 	}
 
 }
