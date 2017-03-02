@@ -19,6 +19,7 @@ public class Zadatak2RandomNumberChooser {
 			for (int i = 0; i < excludedNumbers.length; i++) {
 				if(randomNumber==excludedNumbers[i]){
 					randomNumber = (int)(Math.random()*52);
+					i=0;
 				}
 			}
 			x = false;
