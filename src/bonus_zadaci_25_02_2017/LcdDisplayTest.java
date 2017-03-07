@@ -6,11 +6,13 @@ import java.util.Scanner;
 public class LcdDisplayTest {
 
 	public static void main(String[] args) {
+		// create scanner and declare and initialize variables 
 		Scanner input = new Scanner(System.in);
 		int number = 0;
 		int size = 0;
 		boolean ex = true;
 		
+		// prompt user for the number to display and size and handle possible exceptions
 		do{
 			try{
 				System.out.println("Enter the number you want to display: ");
@@ -42,6 +44,7 @@ public class LcdDisplayTest {
 			
 		}while(ex);
 		
+		// display numbers
 		LcdDisplay.displayNumber(number,size);
 		
 		input.close();

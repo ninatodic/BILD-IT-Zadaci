@@ -2,7 +2,8 @@ package bonus_zadaci_25_02_2017;
 
 public class LcdDisplay {
 	
-public static void displayNumber (int number,int size){
+	// display number, line per line
+	public static void displayNumber (int number,int size){
 		
 		LcdDisplay.printLine1(number, size);
 		System.out.println();
@@ -13,6 +14,7 @@ public static void displayNumber (int number,int size){
 		LcdDisplay.printLine5(number, size);
 	}
 
+	// Display first line
 	public static void printLine1(int number, int size) {
 		int[] digits = getDigits(number);
 
@@ -67,6 +69,7 @@ public static void displayNumber (int number,int size){
 		}
 	}
 
+	// Display line 2
 	public static void printLine2(int number, int size) {
 		int[] digits = getDigits(number);
 
@@ -113,6 +116,7 @@ public static void displayNumber (int number,int size){
 
 	}
 
+	// Display line 3
 	public static void printLine3(int number, int size) {
 		int[] digits = getDigits(number);
 
@@ -160,7 +164,7 @@ public static void displayNumber (int number,int size){
 		}
 	}
 
-
+	// Display line 4
 	public static void printLine4(int number, int size) {
 		int[] digits = getDigits(number);
 
@@ -216,7 +220,7 @@ public static void displayNumber (int number,int size){
 
 	}
 
-
+	// display line 5
 	public static void printLine5(int number, int size) {
 		int[] digits = getDigits(number);
 
@@ -286,6 +290,7 @@ public static void displayNumber (int number,int size){
 
 	}
 
+	// get array of digits
 	static int[] getDigits(int number) {
 		String numberStr = number + "";
 		int[] digits = new int[numberStr.length()];
@@ -296,7 +301,8 @@ public static void displayNumber (int number,int size){
 		}
 		return digits;
 	}
-
+	
+	// print white space for vertical lines
 	private static String printWhiteSpace(int size) {
 		String s = "";
 		for (int i = 0; i < size; i++) {
