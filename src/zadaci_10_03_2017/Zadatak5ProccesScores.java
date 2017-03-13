@@ -16,6 +16,7 @@ public class Zadatak5ProccesScores {
 		String fileName = input.nextLine();
 		
 		Path path = Paths.get(fileName);
+		if(Files.exists(path)){
 		int count = 0;
 		int sum = 0;
 		try (BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)){
@@ -37,6 +38,9 @@ public class Zadatak5ProccesScores {
 		}
 		catch(IOException e){
 			e.printStackTrace();
+		}
+		} else{
+			System.out.println("File does not exist, restart program and enter proper fileName");
 		}
 		
 		input.close();
