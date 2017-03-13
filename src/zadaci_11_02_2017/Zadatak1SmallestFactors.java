@@ -18,11 +18,17 @@ public class Zadatak1SmallestFactors {
 
 				System.out.println("Enter some integer: ");
 				userInput = input.nextInt();
+				if(userInput<1){
+					throw new Exception("Invalid input");
+				}
 				ex = false;
 			} catch (InputMismatchException e) {
 				System.out.println("Invalid input, enter integer");
 				input.nextLine();
-			}
+			} catch (Exception e){
+					System.out.println("The entered number must be positive.");
+					input.nextLine();
+				}
 		} while (ex);
 
 		// declare the arrayList and initialize it with invoking smallestFactors

@@ -1,6 +1,5 @@
 package zadaci_11_02_2017;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Zadatak2ISBNumber {
@@ -21,10 +20,15 @@ public class Zadatak2ISBNumber {
 					isbn = input.next();
 				}
 				int isbnInt = Integer.parseInt(isbn);
+				if(isbnInt<0){
+					throw new Exception("Negative entry");
+				}
 				ex = false;
 			} catch (NumberFormatException e) {
 				System.out.println("Invalid input, try again");
 				input.nextLine();
+			} catch (Exception e){
+				System.out.println("You cannot enter negative number");
 			}
 		} while (ex);
 
