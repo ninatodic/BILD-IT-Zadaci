@@ -7,22 +7,29 @@ import java.util.Scanner;
 public class Zadatak1MatrixHighestRowAndColumn {
 
 	public static void main(String[] args) {
+		// create two arrayLists for storing indexes of highest row and column
 		ArrayList <Integer> rows = new ArrayList<>();
 		ArrayList <Integer> columns = new ArrayList<>();
 		
+		// get user input for matrix sizes
 		int size = getUserInput();
 		
 		
+		// create matrix with randomly generated 0's and 1's
 		int [][] matrix= new int[size][size];
 		
+		// print generated matrix
 		printMatrix(matrix);
 		
+		// get indexes of highest row and print it
 		rows = getLargestRows(matrix);
 		System.out.print("The largest row index: " );
 		for (int i = 0; i < rows.size(); i++) {
 			System.out.print(rows.get(i) + " ");
 		}
 		 System.out.println();
+		 
+		 // get indexes of highest columns and print it
 		columns = getLargestColumns(matrix);
 		System.out.print("The largest column index: " );
 		for (int i = 0; i < columns.size(); i++) {
@@ -31,6 +38,7 @@ public class Zadatak1MatrixHighestRowAndColumn {
 		
 	}
 
+	// method that returns largest column
 	private static ArrayList<Integer> getLargestColumns(int[][] matrix) {
 		ArrayList<Integer> index = new ArrayList<Integer>();
 		int[] count = new int[matrix.length];
@@ -45,6 +53,7 @@ public class Zadatak1MatrixHighestRowAndColumn {
 		return index;
 	}
 
+	// method that returns highest rows
 	private static ArrayList<Integer> getLargestRows(int[][] matrix) {
 		ArrayList<Integer> index = new ArrayList<Integer>();
 		int[] count = new int[matrix.length];
@@ -59,6 +68,7 @@ public class Zadatak1MatrixHighestRowAndColumn {
 		return index;
 	}
 	
+	// method that returns number of 1's in highest column or row
 	public static int max(int[] a) {
 		int max = a[0];
 		for (int i = 0; i < a.length; i++) {
@@ -68,6 +78,7 @@ public class Zadatak1MatrixHighestRowAndColumn {
 		return max;
 	}
 	
+	// method that returns indexes of all rows and column that have max number of 1's
 	public static void getIndex(ArrayList<Integer> list, int[] count, int x) {
 		for (int i = 0; i < count.length; i++) {
 			if (count[i] == x)

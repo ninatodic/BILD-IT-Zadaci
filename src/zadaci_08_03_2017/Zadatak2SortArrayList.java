@@ -8,9 +8,11 @@ import java.util.Scanner;
 public class Zadatak2SortArrayList {
 
 	public static void main(String[] args) {
+		// create scanner and arrayList
 		Scanner input  = new Scanner (System.in);
 		ArrayList <Integer> list = new ArrayList<>();
 		
+		// prompt the user to enter 5 integers in arrayList and handle possible exceptions
 		boolean ex = true;
 		do{
 			try{
@@ -26,13 +28,16 @@ public class Zadatak2SortArrayList {
 			}
 		}while(ex);
 		
+		// method that sorts arrayList
 		sort(list);
+		// print sorted list
 		System.out.println(list);
 		
 		input.close();
 		
 	}
 	
+	// method that sorts arrayList
 	public static void sort(ArrayList<Integer> list){
 		int[] numbList = new int[list.size()];
 		for (int i = 0; i < numbList.length; i++) {

@@ -7,9 +7,11 @@ import java.util.Scanner;
 public class Zadatak3SumArrayListElements {
 
 	public static void main(String[] args) {
+		// create scanner and arrayList
 		Scanner input  = new Scanner (System.in);
 		ArrayList <Double> list = new ArrayList<>();
 		
+		// prompt the user to enter 5 integers in arrayList and handle possible exceptions
 		boolean ex = true;
 		do{
 			try{
@@ -25,13 +27,14 @@ public class Zadatak3SumArrayListElements {
 			}
 		}while(ex);
 		
-		;
+		// print sum of all elements in arrayList by invoking sum method
 		System.out.println("The sum of all elements in the list is: " + sum(list));
 		
 		input.close();
 		
 	}
 	
+	// method that returns sum of all elements in arrayList
 	public static double sum(ArrayList<Double> list){
 		double sum = 0;
 		for (int i = 0; i < list.size(); i++) {

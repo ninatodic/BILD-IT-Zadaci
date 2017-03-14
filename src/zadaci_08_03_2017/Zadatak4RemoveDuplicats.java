@@ -7,9 +7,11 @@ import java.util.Scanner;
 public class Zadatak4RemoveDuplicats {
 
 	public static void main(String[] args) {
+		// create scanner and arrayList
 		Scanner input  = new Scanner (System.in);
 		ArrayList <Integer> list = new ArrayList<>();
 		
+		// prompt the user to enter 10 integers in arrayList and handle possible exceptions
 		boolean ex = true;
 		do{
 			try{
@@ -25,6 +27,7 @@ public class Zadatak4RemoveDuplicats {
 			}
 		}while(ex);
 		
+		//invoke method that removes duplicates from the list and print new list
 		removeDuplicate(list);
 		System.out.println(list);
 		
@@ -32,9 +35,10 @@ public class Zadatak4RemoveDuplicats {
 		
 	}
 	
+	// method that returns list without duplicate elements
 	public static void removeDuplicate(ArrayList<Integer> list){
-		ArrayList<Integer> list2 = new ArrayList<>();
-		for (int i = 0; i < list.size(); i++) {
+		ArrayList<Integer> list2 = new ArrayList<>(); // create another list
+		for (int i = 0; i < list.size(); i++) { // fill it with unique values
 			if(list2.contains(list.get(i))){
 				continue;
 			} else {
@@ -42,8 +46,8 @@ public class Zadatak4RemoveDuplicats {
 			}
 		}
 		
-		list.clear();
-		for (int i = 0; i < list2.size(); i++) {
+		list.clear(); // clear first list
+		for (int i = 0; i < list2.size(); i++) { // copy unique list in first list
 			list.add(list2.get(i));
 		}
 	}
