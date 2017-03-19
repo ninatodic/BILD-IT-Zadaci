@@ -29,9 +29,9 @@ public class Zadatak5ProccesScores {
 					count+=1;
 					sum += Integer.parseInt(words[i]);
 				}
-				System.out.println("The scores total is: " + sum);
-				System.out.println("The scores average is: " + (sum/count));
 			}
+			System.out.println("The scores total is: " + sum);
+			System.out.println("The scores average is: " + (sum/count));
 			
 			
 

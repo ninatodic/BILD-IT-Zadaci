@@ -11,7 +11,7 @@ public class Zadatak5LargeDataSet {
 
 	public static void main(String[] args) throws IOException {
 		// create path and check whether file exist, if it does not create one
-		Path path = Paths.get("scores.txt");
+		Path path = Paths.get("salary.txt");
 		if (!Files.exists(path)) {
 			Files.createFile(path);
 		}
