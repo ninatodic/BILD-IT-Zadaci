@@ -28,11 +28,10 @@ public class Zadatak4ProcesScoresWeb {
 						number.add(Integer.parseInt(words[i]));
 						sum += number.get(i);
 					}
-					System.out.println();
 				}
 			}
 
-			System.out.println("Total of scores: " + sum);
+			System.out.println("\nTotal of scores: " + sum);
 			System.out.println("Their average is: " + (sum / number.size()));
 
 		} catch (java.io.IOException ex) {
